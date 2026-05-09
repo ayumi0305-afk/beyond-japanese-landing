@@ -122,3 +122,21 @@
 - [ ] Beyond Japan Journey (6 Months) セクションを追加し、長期的な自信・文化理解・コミュニケーション支援として表現する。
 - [ ] Japan Trip Support Add-on (+$40) を追加し、旅行代理店や無制限サポートに見えないように、個別の安心サポートとして表現する。
 - [ ] 日本語確認キャンバスにも更新内容を反映する。
+
+## Lesson Policy / Terms of Service Update
+
+- [ ] Lesson Format、Payments、Cancellation & Rescheduling、Late Arrival / No-show、Lesson Recordings、Homework、Student Platform、Package Expiration を含むポリシーセクションを追加する。
+- [ ] 規約のように冷たくならないよう、温かく、尊重があり、落ち着いたブランドトーンで表現する。
+- [ ] キャンセル・リスケは24時間前まで無料、緊急時は早めに連絡、6時間未満のリスケは状況により完了扱いになる可能性があることをやわらかく表現する。
+- [ ] 20分以上の無断遅刻は完了扱いになる可能性があること、遅れる場合は短いメッセージを推奨することを含める。
+- [ ] 録画、任意宿題、学生プラットフォーム、プラン有効期限を含める。
+- [ ] 日本語確認キャンバスにも同じ内容を自然な日本語で反映する。
+
+## Contact Section / Footer Social Links Update
+
+- [ ] Name、Email、Message を含む温かくシンプルなContactフォーム風セクションを追加する。
+- [ ] 連絡先メール beyondjp.lesson@gmail.com を表示し、メールリンクとして使えるようにする。
+- [ ] Contact文言は「Questions about lessons or Japan travel preparation? I’d love to hear from you.」方向で、初心者にも連絡しやすいトーンにする。
+- [ ] フッターに Instagram リンク https://www.instagram.com/beyond_japanese.ayumi/ を追加する。
+- [ ] Instagramボタンはミニマルでモバイル対応のデザインにする。
+- [ ] 直前に中断された日本語確認キャンバスへのLesson Policy反映が完了しているか確認し、必要なら修正する。

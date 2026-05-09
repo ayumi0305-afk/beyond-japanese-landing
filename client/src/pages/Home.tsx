@@ -14,6 +14,7 @@ import {
   FileText,
   Globe2,
   Heart,
+  Instagram,
   Languages,
   Leaf,
   MapPin,
@@ -123,6 +124,41 @@ const tripSupportItems = [
   "Cultural and etiquette guidance",
   "Roleplay practice",
   "Simple reservation or phone support when needed",
+];
+
+const lessonPolicies = [
+  {
+    title: "Lesson format",
+    text: "Lessons are held online via Google Meet. Personalized support, lesson notes, review materials, and useful resources are shared through the custom student learning platform so your learning feels organized and easy to return to.",
+  },
+  {
+    title: "Payments",
+    text: "Trial lessons are booked through Cal.com. Continuing lessons are paid in advance via Wise or PayPal, so everything is clear before each learning period begins.",
+  },
+  {
+    title: "Cancellation & rescheduling",
+    text: "Lessons may be canceled or rescheduled free of charge up to 24 hours before the lesson. I understand that unexpected situations can happen, so if something urgent comes up, please contact Ayumi as soon as you can. Rescheduling requests made less than 6 hours before the lesson may be considered completed lessons depending on the situation.",
+  },
+  {
+    title: "Late arrival / no-show",
+    text: "If you are running late, please send a quick message if possible. If a student is more than 20 minutes late without notice, the lesson may be considered completed so the schedule remains respectful for everyone.",
+  },
+  {
+    title: "Lesson recordings",
+    text: "Some lessons may be recorded for personal learning review and progress tracking. Students may receive recordings from their first lesson and occasional progress recordings to help them notice their improvement over time.",
+  },
+  {
+    title: "Homework",
+    text: "Homework is optional and always based on your goals, schedule, and preferences. Some learners enjoy extra practice, while others prefer light review between lessons.",
+  },
+  {
+    title: "Student platform",
+    text: "Active students receive access to the custom learning platform, including lesson notes, vocabulary review, messaging, booking access, and personalized learning support.",
+  },
+  {
+    title: "Plan expiration",
+    text: "To keep learning steady and supportive, the 4-lesson plan is generally valid for 2–3 months, the 3-month travel plan is valid for 3 months, and the 6-month journey plan is valid for 6 months.",
+  },
 ];
 
 const faqs = [
@@ -249,6 +285,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#learn">What You’ll Learn</a>
           <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
         </nav>
         <a className="nav-cta" href="#trial">Book Your Trial Lesson</a>
         <button className="mobile-menu" aria-label="Open menu"><Menu size={24} /></button>
@@ -381,13 +418,53 @@ export default function Home() {
           <div className="faq-list">{faqs.map((faq, index) => <FAQItem key={faq.q} {...faq} openByDefault={index === 0} />)}</div>
         </section>
 
+        <section className="policy-section" id="lesson-policy">
+          <div className="policy-heading">
+            <p className="kicker">Lesson Policy</p>
+            <h2>Guidelines for a smooth and respectful learning experience.</h2>
+            <p>These guidelines exist to create a calm, supportive learning environment for everyone. They are here to make expectations clear while keeping the experience human, flexible, and respectful.</p>
+          </div>
+          <div className="policy-grid">
+            {lessonPolicies.map((policy) => (
+              <article className="policy-card" key={policy.title}>
+                <h3>{policy.title}</h3>
+                <p>{policy.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="contact-section" id="contact">
+          <div className="contact-copy">
+            <p className="kicker">Contact</p>
+            <h2>Questions about lessons or Japan travel preparation?</h2>
+            <p>I’d love to hear from you. Whether you are a complete beginner, planning your first Japan trip, or wondering which lesson style fits you best, feel free to reach out anytime.</p>
+            <a href="mailto:beyondjp.lesson@gmail.com">beyondjp.lesson@gmail.com</a>
+          </div>
+          <form className="contact-form" action="mailto:beyondjp.lesson@gmail.com" method="post" encType="text/plain">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows={5} placeholder="Tell me a little about your Japanese goals or Japan travel plans." />
+            </label>
+            <button type="submit">Send a Message <ArrowRight size={18} /></button>
+          </form>
+        </section>
+
         <section className="final-banner" id="trial">
           <PhotoSlot label="Cafe / Japan travel photo" className="cta-photo" />
-          <div className="final-card"><h2>Japan becomes different when you can connect through language.</h2><p>You are not just signing up for Japanese lessons. You are starting a deeper relationship with Japan.</p><a className="white-button" href="#top">Book Your Trial Lesson <ArrowRight size={18} /></a><small>Trial Lesson — $20 / 30 min</small></div>
+          <div className="final-card"><h2>Japan becomes different when you can connect through language.</h2><p>You are not just signing up for Japanese lessons. You are starting a deeper relationship with Japan.</p><a className="white-button" href="#contact">Book Your Trial Lesson <ArrowRight size={18} /></a><small>Trial Lesson — $20 / 30 min</small></div>
         </section>
       </main>
 
-      <footer className="footer-bar"><img src={logoSrc} alt="Beyond Japanese" /><nav><a href="#how">How it works</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="/ja">日本語確認</a></nav></footer>
+      <footer className="footer-bar"><img src={logoSrc} alt="Beyond Japanese" /><nav><a href="#how">How it works</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a><a href="/ja">日本語確認</a></nav><a className="instagram-link" href="https://www.instagram.com/beyond_japanese.ayumi/" target="_blank" rel="noreferrer" aria-label="Beyond Japanese Instagram"><Instagram size={18} /> Instagram</a></footer>
     </div>
   );
 }
