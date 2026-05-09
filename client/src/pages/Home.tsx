@@ -32,6 +32,8 @@ import { useState } from "react";
 
 const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
 const finalCtaCafeSrc = "/manus-storage/final-cta-cafe_5ef5bcf6.webp";
+const practicalCafeSrc = "/manus-storage/practical-cafe_39895723.png";
+const practicalKonbiniSrc = "/manus-storage/practical-konbini_f671b4a3.png";
 
 const heroImages = [
   { src: "/manus-storage/hero_user_3_9b94a54c.webp", alt: "Daytime Japan travel scene" },
@@ -56,8 +58,8 @@ const targetCards = [
 ];
 
 const practicalScenes = [
-  { icon: Coffee, title: "At a cafe", label: "Cafe / quiet Japan photo" },
-  { icon: ShoppingBag, title: "At a convenience store", label: "Konbini / store photo" },
+  { icon: Coffee, title: "At a cafe", label: "Cafe / quiet Japan photo", image: practicalCafeSrc },
+  { icon: ShoppingBag, title: "At a convenience store", label: "Konbini / store photo", image: practicalKonbiniSrc },
   { icon: Train, title: "At a station", label: "Train station photo" },
   { icon: MapPin, title: "Asking for directions", label: "Street / direction photo" },
 ];
@@ -352,7 +354,7 @@ export default function Home() {
           <div className="section-title-row"><div><h2>Practical Japanese for real moments</h2><p>Learn what you actually need for cafes, shrines, stations, food, directions, and small talk with locals.</p></div></div>
           <div className="scene-grid">
             {practicalScenes.map((scene) => (
-              <article className="scene-card" key={scene.title}><PhotoSlot label={scene.label} className="scene-photo" /><span className="scene-icon"><scene.icon size={20} /></span><h3>{scene.title}</h3></article>
+              <article className="scene-card" key={scene.title}>{"image" in scene ? <img className="scene-photo scene-real-photo" src={scene.image} alt={scene.label} /> : <PhotoSlot label={scene.label} className="scene-photo" />}<span className="scene-icon"><scene.icon size={20} /></span><h3>{scene.title}</h3></article>
             ))}
           </div>
         </section>

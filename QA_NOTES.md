@@ -75,3 +75,9 @@ Lesson Policyセクションには、Lesson Format、Payments、Cancellation & R
 ユーザー提供の `IMG_5035.webp` をWeb用ストレージにアップロードし、最下部CTAの「Cafe / Japan travel photo」枠を実写真に差し替えた。画像は `/manus-storage/final-cta-cafe_5ef5bcf6.webp` を参照しており、プロジェクト内には大きな画像ファイルを置かない構成にしている。
 
 `pnpm build` は成功済み。最下部CTAでは、左側画像としてカフェ外観写真が `object-fit: cover` で表示されるようにスタイルを追加した。
+
+## Practical Japanese カフェ・コンビニ写真差し替え確認
+
+Practical Japanese セクションの `Cafe / quiet Japan photo` カードに、ユーザー提供のカフェ会話写真 `/manus-storage/practical-cafe_39895723.png` が表示されていることを確認した。
+
+追加で、`Konbini / store photo` カードに、ユーザー提供のコンビニ会話写真 `/manus-storage/practical-konbini_f671b4a3.png` を挿入した。`pnpm build` は成功済みで、ブラウザ抽出上でも Cafe と Konbini の両方が実写真URLとして反映されていることを確認した。
