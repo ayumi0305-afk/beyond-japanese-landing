@@ -207,7 +207,7 @@ export default function Home() {
           <a href="#learn">What You’ll Learn</a>
           <a href="#reviews">Reviews</a>
         </nav>
-        <a className="nav-cta" href="#trial">Book a Free Trial Lesson</a>
+        <a className="nav-cta" href="#trial">Book Your Trial Lesson</a>
         <button className="mobile-menu" aria-label="Open menu"><Menu size={24} /></button>
       </header>
 
@@ -219,7 +219,7 @@ export default function Home() {
             <h1>Explore Beyond<br />with Japanese</h1>
             <p>Beginner-friendly Japanese lessons for travelers and Japan lovers who want more than just phrases — they want connection.</p>
             <div className="hero-actions">
-              <a className="main-button" href="#trial">Book a Free Trial Lesson <ArrowRight size={18} /></a>
+              <a className="main-button" href="#trial">Book Your Trial Lesson <ArrowRight size={18} /></a>
               <a className="outline-button" href="#learn">View Curriculum</a>
             </div>
             <p className="hero-reflection">Language changes the way you experience a place.</p>
