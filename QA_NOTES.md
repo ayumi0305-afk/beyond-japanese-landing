@@ -69,3 +69,9 @@ Contactセクションを追加し、Name、Email、Messageの入力欄を持つ
 Lesson Policyセクションには、Lesson Format、Payments、Cancellation & Rescheduling、Late Arrival / No-show、Lesson Recordings、Homework、Student Platform、Plan Expiration を追加した。文体は冷たい規約文ではなく、学習環境をスムーズで尊重あるものにするための温かいガイドラインとして表現している。
 
 日本語確認キャンバスにもLesson PolicyとContactの要約を反映した。`pnpm build` は成功済みで、ブラウザ上でもContactセクションへのアンカー遷移を確認した。
+
+## 最下部CTAカフェ写真差し替え
+
+ユーザー提供の `IMG_5035.webp` をWeb用ストレージにアップロードし、最下部CTAの「Cafe / Japan travel photo」枠を実写真に差し替えた。画像は `/manus-storage/final-cta-cafe_5ef5bcf6.webp` を参照しており、プロジェクト内には大きな画像ファイルを置かない構成にしている。
+
+`pnpm build` は成功済み。最下部CTAでは、左側画像としてカフェ外観写真が `object-fit: cover` で表示されるようにスタイルを追加した。

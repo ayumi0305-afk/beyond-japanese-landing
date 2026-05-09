@@ -31,6 +31,7 @@ import {
 import { useState } from "react";
 
 const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
+const finalCtaCafeSrc = "/manus-storage/final-cta-cafe_5ef5bcf6.webp";
 
 const heroImages = [
   { src: "/manus-storage/hero_user_3_9b94a54c.webp", alt: "Daytime Japan travel scene" },
@@ -459,7 +460,7 @@ export default function Home() {
         </section>
 
         <section className="final-banner" id="trial">
-          <PhotoSlot label="Cafe / Japan travel photo" className="cta-photo" />
+          <img className="cta-photo final-cafe-photo" src={finalCtaCafeSrc} alt="Cafe in Japan for Beyond Japanese travel lesson CTA" />
           <div className="final-card"><h2>Japan becomes different when you can connect through language.</h2><p>You are not just signing up for Japanese lessons. You are starting a deeper relationship with Japan.</p><a className="white-button" href="#contact">Book Your Trial Lesson <ArrowRight size={18} /></a><small>Trial Lesson — $20 / 30 min</small></div>
         </section>
       </main>
