@@ -117,7 +117,7 @@ function HeroFadeSlider() {
           src={image.src}
           alt={image.alt}
           className="hero-slide"
-          style={{ animationDelay: `${index * 1.5}s` }}
+          style={{ animationDelay: `${index * 3}s` }}
         />
       ))}
     </div>
@@ -146,6 +146,8 @@ function ProfileCarousel() {
           <img key={image.src} src={image.src} alt={image.alt} draggable="false" />
         ))}
       </div>
+      <button type="button" className="profile-click-zone profile-click-left" aria-label="Previous Ayumi photo" onClick={() => goTo(active - 1)} />
+      <button type="button" className="profile-click-zone profile-click-right" aria-label="Next Ayumi photo" onClick={() => goTo(active + 1)} />
       <div className="profile-dots" aria-label="Ayumi photo selector">
         {profileImages.map((image, index) => (
           <button
