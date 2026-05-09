@@ -30,6 +30,21 @@ import { useState } from "react";
 
 const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
 
+const heroImages = [
+  { src: "/manus-storage/hero_user_3_9b94a54c.webp", alt: "Daytime Japan travel scene" },
+  { src: "/manus-storage/hero_user_1_c4fc8c3d.webp", alt: "Nighttime Japan travel scene" },
+  { src: "/manus-storage/hero_user_4_17b058f9.webp", alt: "Daytime Japan city scene" },
+  { src: "/manus-storage/hero_user_2_d776da40.webp", alt: "Nighttime Japan city scene" },
+  { src: "/manus-storage/hero_user_5_050a089f.webp", alt: "Daytime bamboo forest in Japan" },
+];
+
+const profileImages = [
+  { src: "/manus-storage/profile_user_1_08a7bc35.webp", alt: "Ayumi walking outdoors in Japan" },
+  { src: "/manus-storage/profile_user_2_5a64ddaa.webp", alt: "Ayumi holding flowers" },
+  { src: "/manus-storage/profile_user_3_1ee40be5.webp", alt: "Ayumi profile photo in Japan" },
+  { src: "/manus-storage/profile_user_4_6b52a76c.webp", alt: "Ayumi lifestyle profile photo" },
+];
+
 const targetCards = [
   { icon: Briefcase, label: "Planning a trip\nto Japan" },
   { icon: MessageCircle, label: "Want practical\nJapanese" },
@@ -93,6 +108,59 @@ function PhotoSlot({ label, className = "" }: { label: string; className?: strin
   );
 }
 
+function HeroFadeSlider() {
+  return (
+    <div className="hero-slider hero-photo">
+      {heroImages.map((image, index) => (
+        <img
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
+          className="hero-slide"
+          style={{ animationDelay: `${index * 1.5}s` }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ProfileCarousel() {
+  const [active, setActive] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const goTo = (index: number) => setActive((index + profileImages.length) % profileImages.length);
+
+  const handleTouchEnd = (clientX: number) => {
+    if (touchStart === null) return;
+    const diff = touchStart - clientX;
+    if (Math.abs(diff) > 38) {
+      goTo(active + (diff > 0 ? 1 : -1));
+    }
+    setTouchStart(null);
+  };
+
+  return (
+    <div className="profile-carousel" onTouchStart={(event) => setTouchStart(event.touches[0].clientX)} onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0].clientX)}>
+      <div className="profile-track" style={{ transform: `translateX(-${active * 100}%)` }}>
+        {profileImages.map((image) => (
+          <img key={image.src} src={image.src} alt={image.alt} draggable="false" />
+        ))}
+      </div>
+      <div className="profile-dots" aria-label="Ayumi photo selector">
+        {profileImages.map((image, index) => (
+          <button
+            key={image.src}
+            type="button"
+            aria-label={`Show Ayumi photo ${index + 1}`}
+            aria-current={active === index}
+            onClick={() => goTo(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function FAQItem({ q, a, openByDefault = false }: { q: string; a: string; openByDefault?: boolean }) {
   const [open, setOpen] = useState(openByDefault);
   return (
@@ -133,7 +201,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-photo-wrap">
-            <PhotoSlot label="Hero station / travel photo" className="hero-photo" />
+            <HeroFadeSlider />
             <div className="hero-note">
               <span className="round-icon"><Heart size={22} /></span>
               <p><strong>It’s more than language.</strong><br />It’s connection.</p>
@@ -154,7 +222,7 @@ export default function Home() {
         </section>
 
         <section className="about-card" id="about">
-          <PhotoSlot label="Ayumi profile photo" className="about-photo" />
+          <ProfileCarousel />
           <div className="about-text">
             <p className="kicker">About your coach</p>
             <h2>Hi, I’m Ayumi.</h2>
