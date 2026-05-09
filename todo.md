@@ -75,3 +75,23 @@
 - [ ] PC版のヘッダーロゴが小さく見えるため、%ベースで少し大きく調整する。
 - [ ] フッターロゴもヘッダーとのバランスを見て少し大きくする。
 - [ ] スマホ版では大きくなりすぎないよう、既存のレスポンシブサイズを維持または微調整する。
+
+## LP Update Direction 反映
+
+- [ ] ヒーロー見出しを「Explore Beyond with Japanese」方向へ更新する。
+- [ ] 「語学学校」ではなく、日本とつながるための個人コーチ／ガイドとして伝わるコピーへ修正する。
+- [ ] Is this you?、About Ayumi、How lessons work、Practical Japanese、Student Learning Space、See Your Growth、Testimonials、Simple Pricing、FAQ、Final CTA の構成へ寄せる。
+- [ ] Ayumiの経験、50名以上のオンライン受講生、教育系大学院バックグラウンドを自然に入れる。
+- [ ] Google Meet、IRODORI、GENKI、Wise / PayPal、Cal.com など指定情報を反映する。
+- [ ] 日本語版確認キャンバスとして /ja ルートを作成する。
+- [ ] 既存の写真スライダー、プロフィールカルーセル、ロゴ比率維持はそのまま保つ。
+
+## ヘッダー・ヒーロー参考デザイン反映
+
+- [ ] ヘッダーを参考画像のように、左に横長ロゴ、右に About / What You’ll Learn / Reviews / Book a Free Trial Lesson の構成へ変更する。
+- [ ] ヘッダーCTAからトライアルセクションへすぐ遷移できるようにする。
+- [ ] ヒーローを右写真カード型ではなく、画面幅いっぱいの透過写真背景型に変更する。
+- [ ] 写真背景は少し透かし、文字が読みやすい白〜クリームのオーバーレイを重ねる。
+- [ ] ヒーロー見出しは参考画像に近い配置にしつつ、新方針の「Explore Beyond with Japanese」を反映する。
+- [ ] ヒーロー写真の切替を3秒より少し遅くする。
+- [ ] 日本語版キャンバスへのルートを有効化する。
