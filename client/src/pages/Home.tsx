@@ -77,9 +77,52 @@ const platformItems = [
 ];
 
 const pricing = [
-  { name: "Trial Lesson", price: "$15", detail: "30 min", note: "Book through Cal.com" },
-  { name: "Private Lesson", price: "$30", detail: "50 min", note: "Continue via Wise or PayPal" },
-  { name: "4 Lesson Pack", price: "$120", detail: "50 min × 4", note: "A simple rhythm for steady progress" },
+  {
+    name: "Trial Lesson",
+    price: "$20",
+    detail: "30 min",
+    note: "A warm first step to meet, talk about your goals and Japan travel plans, check your level, create a simple roadmap, learn one useful expression, and experience the student learning platform.",
+  },
+  {
+    name: "Single Lesson",
+    price: "$40",
+    detail: "50 min personalized lesson",
+    note: "Personalized support for practical communication, real-life Japanese, conversation confidence, and situations you actually want to handle.",
+  },
+  {
+    name: "Beyond Starter Plan",
+    price: "$140",
+    detail: "4 personalized lessons",
+    note: "A supportive beginner-friendly learning journey with consistent guidance, conversation practice, student platform access, and confidence building.",
+  },
+];
+
+const travelPrograms = [
+  {
+    name: "Japan Trip Prep",
+    duration: "3 Months",
+    positioning: "Learn Japanese while preparing for a more meaningful Japan experience.",
+    priceNote: "Designed around weekly personalized lessons, averaging around $35 per lesson.",
+    detail: "Build confidence before your trip through travel conversation practice, real-situation roleplay, practical phrases, student platform access, personalized support, and progress tracking.",
+  },
+  {
+    name: "Beyond Japan Journey",
+    duration: "6 Months",
+    positioning: "A longer-term personalized Japanese journey for communication, confidence, and deeper cultural connection.",
+    priceNote: "For learners who want sustainable support beyond one trip.",
+    detail: "Continue building real communication skills while exploring Japanese culture, strengthening confidence, and receiving long-term personalized support.",
+  },
+];
+
+const tripSupportItems = [
+  "Personalized local recommendations",
+  "Curated Google Maps lists",
+  "Hidden local spots",
+  "Beginner-friendly restaurants and cafes",
+  "Travel phrase support",
+  "Cultural and etiquette guidance",
+  "Roleplay practice",
+  "Simple reservation or phone support when needed",
 ];
 
 const faqs = [
@@ -297,10 +340,40 @@ export default function Home() {
         </section>
 
         <section className="pricing-section" id="pricing">
-          <h2>Simple pricing</h2>
-          <div className="pricing-grid">
+          <p className="kicker">Personalized learning experiences</p>
+          <h2>Choose the support that fits your Japan journey.</h2>
+          <p className="section-lead">Beyond Japanese is not simple hourly tutoring. Each option is designed as warm, personalized support for practical communication, travel confidence, and a deeper connection with Japan.</p>
+          <div className="pricing-grid pricing-grid-rich">
             {pricing.map((item) => <article className="pricing-card" key={item.name}><h3>{item.name}</h3><strong>{item.price}</strong><p>{item.detail}</p><span>{item.note}</span></article>)}
           </div>
+        </section>
+
+        <section className="program-section">
+          <p className="kicker">Travel-focused programs</p>
+          <h2>Prepare for Japan with confidence, not pressure.</h2>
+          <div className="program-grid">
+            {travelPrograms.map((program) => (
+              <article className="program-card" key={program.name}>
+                <span>{program.duration}</span>
+                <h3>{program.name}</h3>
+                <p className="program-positioning">{program.positioning}</p>
+                <p>{program.detail}</p>
+                <small>{program.priceNote}</small>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="trip-addon-section">
+          <div className="trip-addon-copy">
+            <p className="kicker">Japan Trip Support Add-on</p>
+            <h2>Thoughtful travel support for learners — +$40</h2>
+            <p>This is not a travel agency or concierge service. It is curated, personal support designed to help you feel more confident, prepared, and connected during your Japan trip.</p>
+          </div>
+          <div className="trip-addon-list">
+            {tripSupportItems.map((item) => <span key={item}><CheckCircle2 size={17} /> {item}</span>)}
+          </div>
+          <p className="trip-addon-note">Support is intentionally simple and focused. It does not include unlimited travel planning or full itinerary management.</p>
         </section>
 
         <section className="faq-section" id="faq">
@@ -310,7 +383,7 @@ export default function Home() {
 
         <section className="final-banner" id="trial">
           <PhotoSlot label="Cafe / Japan travel photo" className="cta-photo" />
-          <div className="final-card"><h2>Japan becomes different when you can connect through language.</h2><p>You are not just signing up for Japanese lessons. You are starting a deeper relationship with Japan.</p><a className="white-button" href="#top">Book Your Trial Lesson <ArrowRight size={18} /></a><small>Trial Lesson — $15 / 30 min</small></div>
+          <div className="final-card"><h2>Japan becomes different when you can connect through language.</h2><p>You are not just signing up for Japanese lessons. You are starting a deeper relationship with Japan.</p><a className="white-button" href="#top">Book Your Trial Lesson <ArrowRight size={18} /></a><small>Trial Lesson — $20 / 30 min</small></div>
         </section>
       </main>
 
