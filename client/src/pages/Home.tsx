@@ -308,13 +308,22 @@ function ProfileCarousel() {
 
 function StudentMomentsCarousel() {
   const [active, setActive] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [dragStart, setDragStart] = useState<number | null>(null);
+  const [dragging, setDragging] = useState(false);
   const goTo = (index: number) => setActive((index + studentMomentImages.length) % studentMomentImages.length);
-  const handleTouchEnd = (clientX: number) => {
-    if (touchStart === null) return;
-    const diff = touchStart - clientX;
-    if (Math.abs(diff) > 38) goTo(active + (diff > 0 ? 1 : -1));
-    setTouchStart(null);
+  const beginDrag = (clientX: number) => {
+    setDragStart(clientX);
+    setDragging(true);
+  };
+  const endDrag = (clientX: number) => {
+    if (dragStart === null) {
+      setDragging(false);
+      return;
+    }
+    const diff = dragStart - clientX;
+    if (Math.abs(diff) > 24) goTo(active + (diff > 0 ? 1 : -1));
+    setDragStart(null);
+    setDragging(false);
   };
 
   return (
@@ -324,19 +333,25 @@ function StudentMomentsCarousel() {
         <h2>Learning that becomes part of real life.</h2>
         <p>From cafés and quiet conversations to everyday discoveries in Japan, lessons become experiences students remember.</p>
       </div>
-      <div className="student-moments-carousel" onTouchStart={(event) => setTouchStart(event.touches[0].clientX)} onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0].clientX)}>
-        <div className="student-moments-track" style={{ transform: `translateX(-${active * 100}%)` }}>
-          {studentMomentImages.map((image) => (
-            <figure className="student-moment-slide" key={image.src}>
-              <img src={image.src} alt={image.alt} draggable="false" />
-            </figure>
-          ))}
-        </div>
+      <div className="student-moments-stage">
         <button type="button" className="student-moment-arrow student-moment-prev" aria-label="Previous student moment" onClick={() => goTo(active - 1)}>‹</button>
-        <button type="button" className="student-moment-arrow student-moment-next" aria-label="Next student moment" onClick={() => goTo(active + 1)}>›</button>
-        <div className="student-moment-dots" aria-label="Student moment image selector">
-          {studentMomentImages.map((image, index) => <button key={image.src} type="button" aria-label={`Show student moment ${index + 1}`} aria-current={active === index} onClick={() => goTo(index)} />)}
+        <div
+          className={`student-moments-carousel${dragging ? " is-dragging" : ""}`}
+          onPointerDown={(event) => beginDrag(event.clientX)}
+          onPointerUp={(event) => endDrag(event.clientX)}
+          onPointerCancel={() => { setDragStart(null); setDragging(false); }}
+          onTouchStart={(event) => beginDrag(event.touches[0].clientX)}
+          onTouchEnd={(event) => endDrag(event.changedTouches[0].clientX)}
+        >
+          <div className="student-moments-track" style={{ transform: `translateX(-${active * 100}%)` }}>
+            {studentMomentImages.map((image, index) => (
+              <figure className="student-moment-slide" key={image.src} aria-hidden={active !== index}>
+                <img src={image.src} alt={image.alt} draggable="false" />
+              </figure>
+            ))}
+          </div>
         </div>
+        <button type="button" className="student-moment-arrow student-moment-next" aria-label="Next student moment" onClick={() => goTo(active + 1)}>›</button>
       </div>
     </section>
   );

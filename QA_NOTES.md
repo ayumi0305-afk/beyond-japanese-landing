@@ -145,3 +145,11 @@ Student Experiences / What students are saying セクションの直前に、Stu
 追加方向の変更に従い、セクションは旅行日記・インフルエンサー風ではなく、日本語学習サポートプラットフォームの一部として見えるようにした。文脈は「日本語を実生活で使う準備」「日常の日本でのやり取り」「学習体験が実際の経験につながること」に寄せ、縦長比率を保つポートレート型カルーセルとして実装した。横長バナー化や強い横方向トリミングは行っていない。
 
 `pnpm build` は成功済み。縦長スクリーンショットにて、Student Moments が Student Learning Space の後、Student Experiences の直前に表示され、縦長画像が主役として配置されていることを確認した。
+
+## Student Moments レイアウト修正確認
+
+Student Moments セクションを、Your Personal Learning Space セクションと同じ左右バランスに近づけ、左側に既存コピー、右側に縦長モバイル風カルーセルを配置した。既存コピーは変更していない。画像は `/client/public/images` 内の `1_dashboad.jpg`、`2_anouncement.jpg`、`3_quiz.jpg`、`4_spredsheet.jpg` の順番を維持している。
+
+小さいpagination dotsは削除し、左右のナビゲーションボタンをデバイスフレーム外へ配置した。クリック＆ドラッグとタッチスワイプのしきい値を軽くし、操作しやすくした。スクリーンショットは横長バナー化せず、デバイス風フレーム内で全体が見えるよう `object-fit: contain` を使用している。
+
+`pnpm build` は成功済み。縦長スクリーンショットにて、Student Learning Spaceの後、Student Experiencesの前に、学習エコシステムの一部としてStudent Momentsが表示され、画像が切れずに見えていることを確認した。
