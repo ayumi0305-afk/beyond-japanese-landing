@@ -117,3 +117,9 @@ Practical Japanese セクションの `At a station` カード画像を、ユー
 チェックポイント保存時に、GitHubから追加された `client/public/images` 内の一部画像が1MBを超えていたため、公開時のタイムアウト防止の観点から同じ用途・同じローカル画像方針のままWeb用に軽量化した。HEIC画像はブラウザ表示とチェックポイント保存の安定性を考慮し、Web用JPEGへ変換し、元の大きなHEICファイルは `/home/ubuntu/webdev-static-assets/beyond-japanese-original-heic-images` に退避した。
 
 ユーザー指定に従い、新規画像生成、ストック画像利用、コピー変更、セクション追加・削除は行っていない。`client/src` 内の `/manus-storage` 参照は残っていないことを確認済み。`pnpm build` は成功し、ホームページ表示も確認済み。
+
+## Practical Japanese 2×2淡い写真カード確認
+
+Practical Japanese for real moments セクションを、参考画像に近い大きめの2×2画像カード構成へ調整した。カード内の写真はクリアに見せず、白〜クリームのオーバーレイと低彩度・低コントラストのフィルターを重ねて、参考画像のような薄い見え方にした。
+
+シチュエーション名は、参考2枚目の内容に合わせて `At a cafe`、`At a convenience store`、`At a station`、`Asking for directions` を維持している。新規画像生成、ストック画像追加、コピー書き換えは行っていない。`pnpm build` は成功済みで、縦長スクリーンショットにて2×2の淡い写真カード表示を確認した。
