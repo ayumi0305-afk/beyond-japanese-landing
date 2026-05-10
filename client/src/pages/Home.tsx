@@ -41,6 +41,13 @@ const heroImages = [
   { src: "/images/footer.JPG", alt: "Quiet Japan cafe travel atmosphere" },
 ];
 
+const studentMomentImages = [
+  { src: "/images/1_dashboad.jpg", alt: "Student learning dashboard used for real-life Japanese preparation" },
+  { src: "/images/2_anouncement.jpg", alt: "Student learning announcement and support material" },
+  { src: "/images/3_quiz.jpg", alt: "Japanese learning quiz for practical review" },
+  { src: "/images/4_spredsheet.jpg", alt: "Vocabulary and lesson support spreadsheet for Japanese study" },
+];
+
 const profileImages = [
   { src: "/images/ayumi-arashiyama.JPEG", alt: "Ayumi in Arashiyama" },
   { src: "/images/ayumi-flower.JPG", alt: "Ayumi holding flowers" },
@@ -299,6 +306,42 @@ function ProfileCarousel() {
   );
 }
 
+function StudentMomentsCarousel() {
+  const [active, setActive] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const goTo = (index: number) => setActive((index + studentMomentImages.length) % studentMomentImages.length);
+  const handleTouchEnd = (clientX: number) => {
+    if (touchStart === null) return;
+    const diff = touchStart - clientX;
+    if (Math.abs(diff) > 38) goTo(active + (diff > 0 ? 1 : -1));
+    setTouchStart(null);
+  };
+
+  return (
+    <section className="student-moments-section" aria-label="Student moments carousel">
+      <div className="student-moments-copy">
+        <p className="kicker">STUDENT MOMENTS</p>
+        <h2>Learning that becomes part of real life.</h2>
+        <p>From cafés and quiet conversations to everyday discoveries in Japan, lessons become experiences students remember.</p>
+      </div>
+      <div className="student-moments-carousel" onTouchStart={(event) => setTouchStart(event.touches[0].clientX)} onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0].clientX)}>
+        <div className="student-moments-track" style={{ transform: `translateX(-${active * 100}%)` }}>
+          {studentMomentImages.map((image) => (
+            <figure className="student-moment-slide" key={image.src}>
+              <img src={image.src} alt={image.alt} draggable="false" />
+            </figure>
+          ))}
+        </div>
+        <button type="button" className="student-moment-arrow student-moment-prev" aria-label="Previous student moment" onClick={() => goTo(active - 1)}>‹</button>
+        <button type="button" className="student-moment-arrow student-moment-next" aria-label="Next student moment" onClick={() => goTo(active + 1)}>›</button>
+        <div className="student-moment-dots" aria-label="Student moment image selector">
+          {studentMomentImages.map((image, index) => <button key={image.src} type="button" aria-label={`Show student moment ${index + 1}`} aria-current={active === index} onClick={() => goTo(index)} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FounderPhilosophy({ expanded = false }: { expanded?: boolean }) {
   const [open, setOpen] = useState(expanded);
   return (
@@ -439,6 +482,8 @@ export default function Home() {
           <div className="portal-copy"><p className="kicker">Student Learning Space</p><h2>Your personal learning space, not just a shared folder.</h2><p>Organized, mobile-friendly support for lessons, vocabulary, messages, booking, and review.</p><a className="text-link" href="/student-platform">Explore the platform <ArrowRight size={16} /></a></div>
           <div className="platform-preview">{platformFeatures.slice(0, 4).map((item) => <div className="platform-card" key={item.title}><item.icon size={19} /><strong>{item.title}</strong><span>{item.text}</span></div>)}</div>
         </section>
+
+        <StudentMomentsCarousel />
 
         <TestimonialsCarousel />
 

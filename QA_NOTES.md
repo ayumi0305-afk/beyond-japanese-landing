@@ -137,3 +137,11 @@ Student Experiences / What students are saying セクションを、参考画像
 以前の問題であった、テキストが縦に細く潰れて単語ごとに改行される表示を解消するため、カード幅、quoteの最大行長、word-break、hyphenation、paddingを調整した。カードは温かいベージュ背景、丸み、控えめな境界線と影、deep tealの円形initial avatarで、Beyond Japaneseの落ち着いた編集的な雰囲気に合わせている。
 
 `pnpm build` は成功済み。デスクトップの縦長スクリーンショットで、見出し、サブ見出し、3カード横並び、自然な文章幅、円形initial avatarが表示されていることを確認した。
+
+## Student Moments カルーセル追加確認
+
+Student Experiences / What students are saying セクションの直前に、Student Moments カルーセルを追加した。画像は `/client/public/images` 内に追加された `1_dashboad.jpg`、`2_anouncement.jpg`、`3_quiz.jpg`、`4_spredsheet.jpg` の4枚のみを、この順番で使用している。新規画像生成、ストック写真、別画像への置き換えは行っていない。
+
+追加方向の変更に従い、セクションは旅行日記・インフルエンサー風ではなく、日本語学習サポートプラットフォームの一部として見えるようにした。文脈は「日本語を実生活で使う準備」「日常の日本でのやり取り」「学習体験が実際の経験につながること」に寄せ、縦長比率を保つポートレート型カルーセルとして実装した。横長バナー化や強い横方向トリミングは行っていない。
+
+`pnpm build` は成功済み。縦長スクリーンショットにて、Student Moments が Student Learning Space の後、Student Experiences の直前に表示され、縦長画像が主役として配置されていることを確認した。
