@@ -284,3 +284,19 @@
 - [ ] 左右ナビボタンを画像フレーム外に大きめ・控えめに配置する。
 - [ ] デスクトップでクリック＆ドラッグ、モバイルでスワイプしやすくする。
 - [ ] スタートアップ風や旅行ブログ風ではなく、学習エコシステムの一部として見せる。
+
+## Student Moments 画像見切れ修正
+
+- [ ] カルーセル内で隣のスライドが見えて右端が切れている状態を解消する。
+- [ ] 各スライドを必ず100%幅で表示し、trackのgapや余白で画像がはみ出さないようにする。
+- [ ] device frame内部ではスクリーンショット全体を `object-fit: contain` で収める。
+- [ ] arrowsは画像に被らない位置へ逃がし、必要ならstage幅を広げる。
+- [ ] PC幅とスマホ幅の両方で、1_〜4_画像の左右端・上下端が切れないことを確認する。
+
+## Student Moments 参考画像準拠の再修正
+
+- [ ] セクションの文字情報を参考画像に合わせる：YOUR ECOSYSTEM / Your Personal Learning Space / Say goodbye to scattered notes... / Real-time progress tracking / Custom digital flashcard sets / Lesson recordings & notes history / Explore Dashboard。
+- [ ] 右側はLearning Hub風の大きなデバイス・モックアップとして表示し、1_〜4_画像の全体が切れないようにする。
+- [ ] 左テキスト・右画像の横並び比率、余白、見出しサイズを参考画像に寄せる。
+- [ ] 小さいドットは使わず、必要な左右ナビのみを控えめに配置する。
+- [ ] 既存の1_〜4_画像順とBeyond Japaneseの色・フォント体系は維持する。

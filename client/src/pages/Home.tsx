@@ -329,9 +329,15 @@ function StudentMomentsCarousel() {
   return (
     <section className="student-moments-section" aria-label="Student moments carousel">
       <div className="student-moments-copy">
-        <p className="kicker">STUDENT MOMENTS</p>
-        <h2>Learning that becomes part of real life.</h2>
-        <p>From cafés and quiet conversations to everyday discoveries in Japan, lessons become experiences students remember.</p>
+        <p className="kicker">YOUR ECOSYSTEM</p>
+        <h2>Your Personal Learning Space</h2>
+        <p>Say goodbye to scattered notes. Access your personalized curriculum, track your progress, and review flashcards in a beautiful, distraction-free dashboard.</p>
+        <div className="student-moments-benefits">
+          <span><CheckCircle2 size={22} /> Real-time progress tracking</span>
+          <span><CheckCircle2 size={22} /> Custom digital flashcard sets</span>
+          <span><CheckCircle2 size={22} /> Lesson recordings & notes history</span>
+        </div>
+        <a className="student-moments-button" href="/student-platform">Explore Dashboard</a>
       </div>
       <div className="student-moments-stage">
         <button type="button" className="student-moment-arrow student-moment-prev" aria-label="Previous student moment" onClick={() => goTo(active - 1)}>‹</button>
