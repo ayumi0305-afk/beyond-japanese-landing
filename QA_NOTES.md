@@ -123,3 +123,9 @@ Practical Japanese セクションの `At a station` カード画像を、ユー
 Practical Japanese for real moments セクションを、参考画像に近い大きめの2×2画像カード構成へ調整した。カード内の写真はクリアに見せず、白〜クリームのオーバーレイと低彩度・低コントラストのフィルターを重ねて、参考画像のような薄い見え方にした。
 
 シチュエーション名は、参考2枚目の内容に合わせて `At a cafe`、`At a convenience store`、`At a station`、`Asking for directions` を維持している。新規画像生成、ストック画像追加、コピー書き換えは行っていない。`pnpm build` は成功済みで、縦長スクリーンショットにて2×2の淡い写真カード表示を確認した。
+
+## Practical Japanese 再精査確認
+
+Practical Japanese for real moments セクションについて、既存の大きな2×2カード構成を維持したまま、写真の白オーバーレイを弱め、人物表情や環境ディテールが残るように調整した。各カードには指定されたタイトルと短い実用説明文を追加し、旅行者が日本で実際に体験する状況として読める階層にした。
+
+カードタイトルは `Restaurants`、`Convenience Stores`、`Transportation`、`Real Conversations` に変更した。説明文はユーザー指定文をそのまま反映している。アイコンは既存アイコンを使い、stroke幅・サイズ・背景のCSS調整でより柔らかく控えめな見え方にした。`pnpm build` は成功済みで、縦長スクリーンショットにて、写真が前回より現実感を保ち、説明文が表示されていることを確認した。

@@ -67,10 +67,34 @@ const targetCards = [
 ];
 
 const practicalScenes = [
-  { icon: Coffee, title: "At a cafe", label: "Cafe / quiet Japan photo", image: practicalCafeSrc },
-  { icon: ShoppingBag, title: "At a convenience store", label: "Konbini / store photo", image: practicalKonbiniSrc },
-  { icon: Train, title: "At a station", label: "Train station photo", image: practicalStationSrc },
-  { icon: MapPin, title: "Asking for directions", label: "Street / direction photo", image: practicalDirectionsSrc },
+  {
+    icon: Coffee,
+    title: "Restaurants",
+    label: "Cafe / quiet Japan photo",
+    image: practicalCafeSrc,
+    description: "Ordering naturally, asking about ingredients, and understanding local dining culture.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Convenience Stores",
+    label: "Konbini / store photo",
+    image: practicalKonbiniSrc,
+    description: "Understanding common konbini phrases and handling everyday purchases smoothly.",
+  },
+  {
+    icon: Train,
+    title: "Transportation",
+    label: "Train station photo",
+    image: practicalStationSrc,
+    description: "Buying tickets, asking for directions, and navigating stations with confidence.",
+  },
+  {
+    icon: MapPin,
+    title: "Real Conversations",
+    label: "Street / direction photo",
+    image: practicalDirectionsSrc,
+    description: "Making small talk, greeting naturally, and connecting beyond memorized phrases.",
+  },
 ];
 
 const lessonFlow = [
@@ -343,7 +367,7 @@ export default function Home() {
         <section className="practical-section">
           <div className="section-title-row"><div><h2>Practical Japanese for real moments</h2><p>Learn what you actually need for cafes, convenience stores, stations, food, directions, and small talk with locals.</p></div><a className="text-link" href="/lessons">See programs <ArrowRight size={16} /></a></div>
           <div className="scene-grid">
-            {practicalScenes.map((scene) => <article className="scene-card" key={scene.title}><img className="scene-photo scene-real-photo" src={scene.image} alt={scene.label} /><span className="scene-icon"><scene.icon size={20} /></span><h3>{scene.title}</h3></article>)}
+            {practicalScenes.map((scene) => <article className="scene-card" key={scene.title}><img className="scene-photo scene-real-photo" src={scene.image} alt={scene.label} /><span className="scene-icon"><scene.icon size={20} strokeWidth={1.65} /></span><h3>{scene.title}</h3><p>{scene.description}</p></article>)}
           </div>
         </section>
 
