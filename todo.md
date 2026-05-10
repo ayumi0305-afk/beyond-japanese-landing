@@ -178,3 +178,17 @@
 - [ ] 画像はユーザー提供素材のみを使用し、新規生成は行わない。
 - [ ] Web用ストレージへアップロードし、プロジェクト内に大きな画像を置かない。
 - [ ] 駅カード内で自然にトリミングされるよう表示を確認する。
+
+## Multi-page Brand Website Restructure
+
+- [ ] 現在の長い単一LPを、HOME / ABOUT / LESSONS / STUDENT PLATFORM / LIBRARY / FAQ / TERMS / CONTACT の複数ページ構成へ再整理する。
+- [ ] HOMEにはHero、Is this you、Founder philosophy、短いAbout、Lesson style overview、Student platform preview、Testimonials、Main pricing preview、Final CTAのみを残す。
+- [ ] 詳細なFAQ、Lesson Policy、長い料金説明、Contact詳細をHOMEから専用ページへ移動する。
+- [ ] ABOUTページにAyumiの教育背景、哲学、京都での暮らし、言語と人とのつながり、Beyond Japaneseを作った理由を配置する。
+- [ ] LESSONSページにTrial Lesson、Single Lesson、Beyond Starter Plan、Japan Trip Prep、Beyond Japan Journey、Japan Trip Support Add-onを整理して掲載する。
+- [ ] STUDENT PLATFORMページに学習プラットフォーム、単語レビュー、予約、メッセージ、モバイル対応、個別サポートを掲載する。
+- [ ] LIBRARYページを、旅行フレーズ、京都おすすめ、Google Mapsリスト、ローカルスポット、季節ガイド、文化メモのための落ち着いたリソースページとして作成する。
+- [ ] FAQページとTERMS / LESSON POLICYページを分離する。
+- [ ] CONTACTページに問い合わせフォーム、メール、Instagramリンクを移動または再配置する。
+- [ ] ナビゲーションを HOME / ABOUT / LESSONS / STUDENT PLATFORM / LIBRARY / FAQ / CONTACT に更新し、フッターにTerms、Instagram、Contactを配置する。
+- [ ] 直前に依頼されたAsking for directions画像差し替えも、複数ページ化作業の前後で反映する。

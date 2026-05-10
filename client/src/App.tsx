@@ -4,7 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import Home, { AboutPage, ContactPage, FAQPage, LessonsPage, LibraryPage, StudentPlatformPage, TermsPage } from "./pages/Home";
 import JapaneseCanvas from "./pages/JapaneseCanvas";
 
 
@@ -12,6 +12,13 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={AboutPage} />
+      <Route path={"/lessons"} component={LessonsPage} />
+      <Route path={"/student-platform"} component={StudentPlatformPage} />
+      <Route path={"/library"} component={LibraryPage} />
+      <Route path={"/faq"} component={FAQPage} />
+      <Route path={"/terms"} component={TermsPage} />
+      <Route path={"/contact"} component={ContactPage} />
       <Route path={"/ja"} component={JapaneseCanvas} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
