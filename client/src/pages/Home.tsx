@@ -34,6 +34,7 @@ const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
 const finalCtaCafeSrc = "/manus-storage/final-cta-cafe_5ef5bcf6.webp";
 const practicalCafeSrc = "/manus-storage/practical-cafe_39895723.png";
 const practicalKonbiniSrc = "/manus-storage/practical-konbini-replacement_255ab1bb.jpeg";
+const practicalStationSrc = "/manus-storage/practical-station_3402c0ec.jpeg";
 
 const heroImages = [
   { src: "/manus-storage/hero_user_3_9b94a54c.webp", alt: "Daytime Japan travel scene" },
@@ -60,7 +61,7 @@ const targetCards = [
 const practicalScenes = [
   { icon: Coffee, title: "At a cafe", label: "Cafe / quiet Japan photo", image: practicalCafeSrc },
   { icon: ShoppingBag, title: "At a convenience store", label: "Konbini / store photo", image: practicalKonbiniSrc },
-  { icon: Train, title: "At a station", label: "Train station photo" },
+  { icon: Train, title: "At a station", label: "Train station photo", image: practicalStationSrc },
   { icon: MapPin, title: "Asking for directions", label: "Street / direction photo" },
 ];
 

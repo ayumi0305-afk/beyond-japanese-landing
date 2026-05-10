@@ -87,3 +87,9 @@ Practical Japanese セクションの `Cafe / quiet Japan photo` カードに、
 Practical Japanese セクションの `At a convenience store` カード画像を、ユーザー提供の新しいコンビニ写真に差し替えた。新しい画像はWeb用ストレージにアップロードし、`/manus-storage/practical-konbini-replacement_255ab1bb.jpeg` として参照している。
 
 `pnpm build` は成功済み。ビルド済みファイルにも新しい画像URLが含まれていることを確認した。既存の `Cafe / quiet Japan photo` の差し替えは維持している。
+
+## At a station 画像差し替え確認
+
+Practical Japanese セクションの `At a station` カード画像を、ユーザー提供の駅案内写真に差し替えた。新しい画像はWeb用ストレージにアップロードし、`/manus-storage/practical-station_3402c0ec.jpeg` として参照している。
+
+`pnpm build` は成功済み。ビルド済みファイルにも新しい画像URLが含まれていることを確認した。既存の `Cafe / quiet Japan photo` と `At a convenience store` の差し替えは維持している。
