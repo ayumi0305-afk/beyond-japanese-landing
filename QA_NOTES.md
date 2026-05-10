@@ -81,3 +81,9 @@ Lesson Policyセクションには、Lesson Format、Payments、Cancellation & R
 Practical Japanese セクションの `Cafe / quiet Japan photo` カードに、ユーザー提供のカフェ会話写真 `/manus-storage/practical-cafe_39895723.png` が表示されていることを確認した。
 
 追加で、`Konbini / store photo` カードに、ユーザー提供のコンビニ会話写真 `/manus-storage/practical-konbini_f671b4a3.png` を挿入した。`pnpm build` は成功済みで、ブラウザ抽出上でも Cafe と Konbini の両方が実写真URLとして反映されていることを確認した。
+
+## At a convenience store 画像差し替え確認
+
+Practical Japanese セクションの `At a convenience store` カード画像を、ユーザー提供の新しいコンビニ写真に差し替えた。新しい画像はWeb用ストレージにアップロードし、`/manus-storage/practical-konbini-replacement_255ab1bb.jpeg` として参照している。
+
+`pnpm build` は成功済み。ビルド済みファイルにも新しい画像URLが含まれていることを確認した。既存の `Cafe / quiet Japan photo` の差し替えは維持している。

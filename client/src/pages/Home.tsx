@@ -33,7 +33,7 @@ import { useState } from "react";
 const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
 const finalCtaCafeSrc = "/manus-storage/final-cta-cafe_5ef5bcf6.webp";
 const practicalCafeSrc = "/manus-storage/practical-cafe_39895723.png";
-const practicalKonbiniSrc = "/manus-storage/practical-konbini_f671b4a3.png";
+const practicalKonbiniSrc = "/manus-storage/practical-konbini-replacement_255ab1bb.jpeg";
 
 const heroImages = [
   { src: "/manus-storage/hero_user_3_9b94a54c.webp", alt: "Daytime Japan travel scene" },
