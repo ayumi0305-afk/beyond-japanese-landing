@@ -236,3 +236,14 @@
 - [ ] タイトルと説明文は指定文言に更新する：Restaurants、Convenience Stores、Transportation、Real Conversations。
 - [ ] アイコンは既存ライブラリ内で、より細く柔らかい印象になるようサイズ・線幅・背景をCSSで調整する。
 - [ ] レイアウトの再設計はせず、階層・読みやすさ・余白のみ精査する。
+
+## Student Experiencesセクション再構築
+
+- [ ] Student Experiences / What students are saying セクションのみを対象に修正し、ホームページ全体は再設計しない。
+- [ ] デスクトップでは3枚の testimonial card を横並びで表示し、最大4件まで横スライドできる構造にする。
+- [ ] モバイルでは1枚ずつ表示し、横スクロール／スワイプしやすい構造にする。
+- [ ] 既存の縦に細く潰れているテキスト表示を解消し、自然な文幅で読めるようにする。
+- [ ] 見出しは “What students are saying”、サブ見出しは “Stories of confidence, connection, and real conversations in Japan.” にする。
+- [ ] カードは温かいベージュ背景、丸み、控えめな境界線または影、十分な余白で編集的に見せる。
+- [ ] Quoteは少しイタリック、Student nameは太字、Student type/locationは小さなuppercase accent textにする。
+- [ ] Avatarはdeep teal背景にcream/white initialsの円形バッジにする。

@@ -24,11 +24,10 @@ import {
   Play,
   ShoppingBag,
   Sparkles,
-  Star,
   Train,
   Video,
 } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 
 const logoSrc = "/images/logo.png";
 const finalCtaCafeSrc = "/images/footer.JPG";
@@ -197,6 +196,33 @@ const faqs = [
   { q: "Are lessons personalized?", a: "Yes. Lessons can include travel situations, culture, anime and manga topics, grammar, or conversation practice." },
 ];
 
+const testimonials = [
+  {
+    initials: "JC",
+    name: "Jessica Chen",
+    type: "Traveler / Canada",
+    quote: "Ayumi’s lessons helped me feel comfortable speaking, even when I made mistakes. Japan felt warmer when I could use simple Japanese.",
+  },
+  {
+    initials: "MR",
+    name: "Michael Reed",
+    type: "Japan lover / USA",
+    quote: "I had studied with apps for a long time, but lessons with Ayumi helped me finally understand how to use Japanese in real conversations.",
+  },
+  {
+    initials: "EK",
+    name: "Elena Kovacs",
+    type: "Student / Germany",
+    quote: "The atmosphere is calm and supportive. I never felt rushed, and I could see my confidence growing little by little.",
+  },
+  {
+    initials: "SL",
+    name: "Sophie Laurent",
+    type: "Traveler / France",
+    quote: "Before my Japan trip, we practiced cafes, stations, and small talk. Those simple phrases made my travel experience feel much more personal.",
+  },
+];
+
 function SiteHeader() {
   return (
     <header className="topbar site-topbar">
@@ -305,6 +331,44 @@ function FAQItem({ q, a, openByDefault = false }: { q: string; a: string; openBy
   );
 }
 
+function TestimonialsCarousel() {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const scrollTestimonials = (direction: -1 | 1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const firstCard = track.querySelector<HTMLElement>(".student-experience-card");
+    const distance = firstCard ? firstCard.offsetWidth + 24 : track.clientWidth;
+    track.scrollBy({ left: direction * distance, behavior: "smooth" });
+  };
+
+  return (
+    <section className="testimonial-section student-experiences-section" aria-label="Student experiences">
+      <div className="student-experiences-heading">
+        <h2>What students are saying</h2>
+        <p>Stories of confidence, connection, and real conversations in Japan.</p>
+      </div>
+      <div className="student-experiences-shell">
+        <button type="button" className="testimonial-nav testimonial-nav-prev" aria-label="Previous testimonials" onClick={() => scrollTestimonials(-1)}>‹</button>
+        <div className="student-experiences-track" ref={trackRef}>
+          {testimonials.map((testimonial) => (
+            <article className="student-experience-card" key={testimonial.name}>
+              <p className="student-quote">“{testimonial.quote}”</p>
+              <div className="student-meta">
+                <span className="student-avatar">{testimonial.initials}</span>
+                <div>
+                  <strong>{testimonial.name}</strong>
+                  <small>{testimonial.type}</small>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <button type="button" className="testimonial-nav testimonial-nav-next" aria-label="Next testimonials" onClick={() => scrollTestimonials(1)}>›</button>
+      </div>
+    </section>
+  );
+}
+
 function ContactForm() {
   return (
     <form className="contact-form" action="mailto:beyondjp.lesson@gmail.com" method="post" encType="text/plain">
@@ -376,10 +440,7 @@ export default function Home() {
           <div className="platform-preview">{platformFeatures.slice(0, 4).map((item) => <div className="platform-card" key={item.title}><item.icon size={19} /><strong>{item.title}</strong><span>{item.text}</span></div>)}</div>
         </section>
 
-        <section className="testimonial-section">
-          <h2>What students are saying</h2>
-          <div className="testimonial-card"><div className="testimonial-avatar">J</div><div className="testimonial-copy"><p>Ayumi’s lessons helped me feel comfortable speaking, even when I made mistakes. Japan felt warmer when I could use simple Japanese.</p><span>Jessica, Canada</span></div><div className="stars">{[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}</div></div>
-        </section>
+        <TestimonialsCarousel />
 
         <section className="pricing-section pricing-preview">
           <p className="kicker">Start your journey</p>
