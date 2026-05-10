@@ -103,3 +103,17 @@ Practical Japanese セクションの `At a station` カード画像を、ユー
 また、直前に依頼された `Asking for directions` 画像差し替えも反映した。Practical Japanese セクションの4カードには、Cafe、Convenience store、Station、Directionsの各ユーザー提供写真URLがビルド済みファイルに含まれていることを確認した。
 
 `pnpm build` は成功済み。ブラウザでHOME、LESSONS、TERMS、CONTACTの主要ページ表示と内容分離を確認した。
+
+## DESIGN_DIRECTION.md優先のレイアウト精査確認
+
+ユーザー提供のDESIGN_DIRECTION.mdを主要方針として確認し、既存コピーと既存情報構成を保持したまま、ヒーロー、余白、タイポグラフィ、CTA、カードの呼吸感を調整した。参考画像は余白・階層・構図の参考としてのみ使用し、コピーの書き換え、新規セクション追加、セクション削除、画像生成、ストック写真利用は行っていない。
+
+ヒーローでは二次CTAを削除し、主要CTAのみを残した。見出しはイタリックを使わず、過度に太い幾何学的な印象を抑えるため、Cormorant Garamond と Instrument Sans の組み合わせへ調整した。画像参照は client/public/images 配下の既存アップロード画像へ切り替え、client/src内に `/manus-storage` 参照が残っていないことを確認した。
+
+`pnpm build` は成功済み。ホームページ表示で、既存コピーが維持され、ヒーローの二次CTAが消え、温かく落ち着いたトーンに寄せた表示になっていることを確認した。
+
+## DESIGN_DIRECTION.md精査後の画像軽量化確認
+
+チェックポイント保存時に、GitHubから追加された `client/public/images` 内の一部画像が1MBを超えていたため、公開時のタイムアウト防止の観点から同じ用途・同じローカル画像方針のままWeb用に軽量化した。HEIC画像はブラウザ表示とチェックポイント保存の安定性を考慮し、Web用JPEGへ変換し、元の大きなHEICファイルは `/home/ubuntu/webdev-static-assets/beyond-japanese-original-heic-images` に退避した。
+
+ユーザー指定に従い、新規画像生成、ストック画像利用、コピー変更、セクション追加・削除は行っていない。`client/src` 内の `/manus-storage` 参照は残っていないことを確認済み。`pnpm build` は成功し、ホームページ表示も確認済み。

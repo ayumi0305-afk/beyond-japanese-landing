@@ -30,26 +30,23 @@ import {
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
-const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
-const finalCtaCafeSrc = "/manus-storage/final-cta-cafe_5ef5bcf6.webp";
-const practicalCafeSrc = "/manus-storage/practical-cafe_39895723.png";
-const practicalKonbiniSrc = "/manus-storage/practical-konbini-replacement_255ab1bb.jpeg";
-const practicalStationSrc = "/manus-storage/practical-station_3402c0ec.jpeg";
-const practicalDirectionsSrc = "/manus-storage/practical-directions_4473478f.jpeg";
+const logoSrc = "/images/logo.png";
+const finalCtaCafeSrc = "/images/footer.JPG";
+const practicalCafeSrc = "/images/cafe.png";
+const practicalKonbiniSrc = "/images/konbini.jpeg";
+const practicalStationSrc = "/images/station.jpeg";
+const practicalDirectionsSrc = "/images/street.jpeg";
 
 const heroImages = [
-  { src: "/manus-storage/hero_user_3_9b94a54c.webp", alt: "Daytime Japan travel scene" },
-  { src: "/manus-storage/hero_user_1_c4fc8c3d.webp", alt: "Nighttime Japan travel scene" },
-  { src: "/manus-storage/hero_user_4_17b058f9.webp", alt: "Daytime Japan city scene" },
-  { src: "/manus-storage/hero_user_2_d776da40.webp", alt: "Nighttime Japan city scene" },
-  { src: "/manus-storage/hero_user_5_050a089f.webp", alt: "Daytime bamboo forest in Japan" },
+  { src: "/images/arashiyama-back.JPG", alt: "Kyoto travel atmosphere" },
+  { src: "/images/footer.JPG", alt: "Quiet Japan cafe travel atmosphere" },
 ];
 
 const profileImages = [
-  { src: "/manus-storage/profile_user_1_08a7bc35.webp", alt: "Ayumi walking outdoors in Japan" },
-  { src: "/manus-storage/profile_user_2_5a64ddaa.webp", alt: "Ayumi holding flowers" },
-  { src: "/manus-storage/profile_user_3_1ee40be5.webp", alt: "Ayumi profile photo in Japan" },
-  { src: "/manus-storage/profile_user_4_6b52a76c.webp", alt: "Ayumi lifestyle profile photo" },
+  { src: "/images/ayumi-arashiyama.JPEG", alt: "Ayumi in Arashiyama" },
+  { src: "/images/ayumi-flower.JPG", alt: "Ayumi holding flowers" },
+  { src: "/images/ayumi-kimono.jpg", alt: "Ayumi in kimono" },
+  { src: "/images/ayumi-kyudo.jpg", alt: "Ayumi kyudo portrait" },
 ];
 
 const navItems = [
@@ -307,7 +304,6 @@ export default function Home() {
             <p>Beginner-friendly Japanese lessons for travelers and Japan lovers who want more than just phrases — they want connection.</p>
             <div className="hero-actions">
               <a className="main-button" href="/contact">Book Your Trial Lesson <ArrowRight size={18} /></a>
-              <a className="outline-button" href="/lessons">Explore Lessons</a>
             </div>
             <p className="hero-reflection">Language changes the way you experience a place.</p>
           </div>

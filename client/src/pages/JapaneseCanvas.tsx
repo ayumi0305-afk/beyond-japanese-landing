@@ -5,7 +5,7 @@ This page is for content confirmation only. It mirrors the updated LP message in
 
 import { ArrowRight, BookOpen, CalendarCheck, Coffee, FileText, Globe2, Heart, Languages, MapPin, MessageCircle, NotebookText, ShoppingBag, Sparkles, Train, Video } from "lucide-react";
 
-const logoSrc = "/manus-storage/beyond-japanese-logo_72442cbd.png";
+const logoSrc = "/images/logo.png";
 
 const sections = [
   {
