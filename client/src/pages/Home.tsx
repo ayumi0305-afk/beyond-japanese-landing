@@ -257,7 +257,7 @@ function SiteFooter() {
   );
 }
 
-function PageShell({ children }: { children: ReactNode }) {
+export function PageShell({ children }: { children: ReactNode }) {
   return <div className="page-shell multi-page-shell" id="top"><SiteHeader />{children}<SiteFooter /></div>;
 }
 
