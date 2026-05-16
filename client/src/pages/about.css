@@ -1,4 +1,4 @@
-/* About page — extends the main design system */
+/* About page — fully scoped to .about-page to prevent any global bleed */
 
 .about-page {
   /* CSS variable bridge: design tokens not present in production index.css */
@@ -12,7 +12,7 @@
   background: var(--cream);
 }
 
-/* eyebrow label — design token not defined in production */
+/* eyebrow label */
 .about-page .eyebrow {
   font-size: 13px;
   font-weight: 600;
@@ -22,23 +22,23 @@
 }
 
 /* Top intro */
-.about-intro {
+.about-page .about-intro {
   padding: clamp(96px, 11vw, 140px) 0 clamp(72px, 9vw, 104px);
 }
-.about-intro-grid {
+.about-page .about-intro-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(56px, 7vw, 96px);
   align-items: center;
 }
-.about-intro-left {
+.about-page .about-intro-left {
   max-width: 620px;
 }
-.about-intro-left .eyebrow {
+.about-page .about-intro-left .eyebrow {
   display: inline-block;
   margin-bottom: 24px;
 }
-.about-intro-left h1 {
+.about-page .about-intro-left h1 {
   font-size: clamp(38px, 4.6vw, 60px);
   font-weight: 800;
   letter-spacing: -0.028em;
@@ -47,46 +47,46 @@
   margin: 0 0 32px;
   text-wrap: balance;
 }
-.about-divider {
+.about-page .about-divider {
   display: block;
   width: 56px;
   height: 2px;
   background: var(--red);
   border-radius: 999px;
 }
-.about-intro-left .about-divider { margin-bottom: 0; }
-.about-intro-right {
+.about-page .about-intro-left .about-divider { margin-bottom: 0; }
+.about-page .about-intro-right {
   max-width: 540px;
 }
-.about-intro-right p {
+.about-page .about-intro-right p {
   font-size: 17px;
   line-height: 1.85;
   color: var(--brown);
   text-wrap: pretty;
   margin: 0;
 }
-.about-intro-right p + p { margin-top: 28px; }
+.about-page .about-intro-right p + p { margin-top: 28px; }
 
-/* Story panel — large beige rounded card */
-.about-panel {
+/* Story panel */
+.about-page .about-panel {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
 }
-.about-panel-inner {
+.about-page .about-panel-inner {
   background: var(--beige);
   border-radius: 36px;
   padding: clamp(48px, 6vw, 88px);
 }
 
-/* Story top: photo left, copy right */
-.story-grid {
+/* Story grid */
+.about-page .story-grid {
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
   gap: clamp(48px, 6vw, 88px);
   align-items: center;
 }
-.story-photo {
+.about-page .story-photo {
   border-radius: 24px;
   overflow: hidden;
   aspect-ratio: 4/5;
@@ -96,20 +96,20 @@
   width: 100%;
   justify-self: start;
 }
-.story-photo img {
+.about-page .story-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-.story-copy {
+.about-page .story-copy {
   max-width: 560px;
 }
-.story-copy .eyebrow {
+.about-page .story-copy .eyebrow {
   display: inline-block;
   margin-bottom: 20px;
 }
-.story-copy h2 {
+.about-page .story-copy h2 {
   font-size: clamp(28px, 3.1vw, 40px);
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -118,37 +118,37 @@
   margin: 0 0 26px;
   text-wrap: balance;
 }
-.story-copy .about-divider { margin-bottom: 32px; }
-.story-copy p {
+.about-page .story-copy .about-divider { margin-bottom: 32px; }
+.about-page .story-copy p {
   font-size: 18px;
   line-height: 1.85;
   color: var(--brown);
   margin: 0 0 24px;
   text-wrap: pretty;
 }
-.story-copy p:last-child { margin-bottom: 0; }
+.about-page .story-copy p:last-child { margin-bottom: 0; }
 
-/* Philosophy block — 4 small principles */
-.philosophy {
+/* Philosophy block */
+.about-page .philosophy {
   margin-top: clamp(56px, 7vw, 88px);
   padding-top: clamp(48px, 5vw, 64px);
   border-top: 1px solid rgba(88, 56, 34, 0.14);
 }
-.philosophy .eyebrow {
+.about-page .philosophy .eyebrow {
   display: inline-block;
   margin-bottom: 40px;
 }
-.philosophy-grid {
+.about-page .philosophy-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(24px, 3vw, 48px);
 }
-.philosophy-item {
+.about-page .philosophy-item {
   text-align: center;
   position: relative;
   padding: 0 20px;
 }
-.philosophy-item + .philosophy-item::before {
+.about-page .philosophy-item + .philosophy-item::before {
   content: "";
   position: absolute;
   left: 0;
@@ -157,7 +157,7 @@
   width: 1px;
   background: rgba(88, 56, 34, 0.16);
 }
-.philosophy-icon {
+.about-page .philosophy-icon {
   width: 56px;
   height: 56px;
   margin: 0 auto 22px;
@@ -166,7 +166,7 @@
   justify-content: center;
   color: #b8743a;
 }
-.philosophy-item h3 {
+.about-page .philosophy-item h3 {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.018em;
@@ -175,7 +175,7 @@
   margin: 0 0 14px;
   text-wrap: balance;
 }
-.philosophy-item p {
+.about-page .philosophy-item p {
   font-size: 15px;
   line-height: 1.75;
   color: var(--brown);
@@ -183,12 +183,12 @@
   text-wrap: pretty;
 }
 
-/* Closing line + CTA */
-.about-close {
+/* Closing CTA */
+.about-page .about-close {
   text-align: center;
   padding: clamp(88px, 10vw, 140px) 32px clamp(112px, 11vw, 160px);
 }
-.about-close p {
+.about-page .about-close p {
   font-size: clamp(19px, 2vw, 24px);
   font-weight: 500;
   color: var(--ink-soft);
@@ -197,32 +197,31 @@
   letter-spacing: -0.012em;
   text-wrap: balance;
 }
-.about-close .accent {
+.about-page .about-close .accent {
   display: block;
   color: var(--red);
   margin-top: 6px;
 }
-.about-close .main-button {
+.about-page .about-close .main-button {
   margin-top: 44px;
 }
 
 /* Responsive */
 @media (max-width: 1199px) {
-  .about-intro { padding: clamp(80px, 9vw, 110px) 0 clamp(56px, 7vw, 80px); }
-  .about-intro-grid {
+  .about-page .about-intro { padding: clamp(80px, 9vw, 110px) 0 clamp(56px, 7vw, 80px); }
+  .about-page .about-intro-grid {
     grid-template-columns: 1fr;
     gap: 32px;
     align-items: start;
     max-width: 720px;
     margin: 0 auto;
   }
-  .about-intro-left { max-width: none; }
-  .about-intro-right { max-width: 540px; }
-  .about-intro-left h1 { margin-bottom: 24px; }
-  .about-intro-right p { font-size: 17px; }
+  .about-page .about-intro-left { max-width: none; }
+  .about-page .about-intro-right { max-width: 540px; }
+  .about-page .about-intro-left h1 { margin-bottom: 24px; }
+  .about-page .about-intro-right p { font-size: 17px; }
 
-  /* Story panel collapses to a centered vertical stack */
-  .story-grid {
+  .about-page .story-grid {
     grid-template-columns: 1fr;
     gap: clamp(40px, 6vw, 64px);
     max-width: 720px;
@@ -230,40 +229,40 @@
     text-align: left;
     align-items: start;
   }
-  .story-photo {
+  .about-page .story-photo {
     max-width: 420px;
     margin: 0 auto;
     width: 100%;
     justify-self: center;
   }
-  .story-copy {
+  .about-page .story-copy {
     max-width: 640px;
     margin: 0 auto;
   }
-  .story-copy p { max-width: none; font-size: 17px; line-height: 1.85; }
+  .about-page .story-copy p { max-width: none; font-size: 17px; line-height: 1.85; }
 
-  .philosophy-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
-  .philosophy-item + .philosophy-item::before { display: none; }
-  .philosophy-item { padding: 0; }
+  .about-page .philosophy-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .about-page .philosophy-item + .philosophy-item::before { display: none; }
+  .about-page .philosophy-item { padding: 0; }
 }
 
 @media (max-width: 1099px) {
-  .about-panel { padding: 0 28px; }
-  .about-panel-inner { padding: clamp(40px, 5vw, 64px); }
-  .story-grid { gap: clamp(36px, 5vw, 56px); }
-  .story-copy p { font-size: 16.5px; }
-  .philosophy-grid { gap: 28px; }
+  .about-page .about-panel { padding: 0 28px; }
+  .about-page .about-panel-inner { padding: clamp(40px, 5vw, 64px); }
+  .about-page .story-grid { gap: clamp(36px, 5vw, 56px); }
+  .about-page .story-copy p { font-size: 16.5px; }
+  .about-page .philosophy-grid { gap: 28px; }
 }
 
 @media (max-width: 768px) {
-  .about-intro { padding: 64px 0 40px; }
-  .about-intro-grid { gap: 24px; }
-  .about-panel { padding: 0 16px; }
-  .about-panel-inner { padding: 36px 28px; border-radius: 24px; }
-  .story-grid { gap: 32px; }
-  .story-photo { max-width: 380px; }
-  .story-copy p { font-size: 16.5px; }
-  .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
-  .philosophy-item p { font-size: 14.5px; }
-  .about-close { padding: 64px 24px 88px; }
+  .about-page .about-intro { padding: 64px 0 40px; }
+  .about-page .about-intro-grid { gap: 24px; }
+  .about-page .about-panel { padding: 0 16px; }
+  .about-page .about-panel-inner { padding: 36px 28px; border-radius: 24px; }
+  .about-page .story-grid { gap: 32px; }
+  .about-page .story-photo { max-width: 380px; }
+  .about-page .story-copy p { font-size: 16.5px; }
+  .about-page .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-page .philosophy-item p { font-size: 14.5px; }
+  .about-page .about-close { padding: 64px 24px 88px; }
 }
