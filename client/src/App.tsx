@@ -5,7 +5,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
-import Home, { ContactPage, FAQPage, LessonsPage, LibraryPage, StudentPlatformPage, TermsPage } from "./pages/Home";
+import FAQ from "./pages/FAQ";
+import Home, { ContactPage, LessonsPage, LibraryPage, StudentPlatformPage, TermsPage } from "./pages/Home";
 import JapaneseCanvas from "./pages/JapaneseCanvas";
 
 
@@ -17,7 +18,7 @@ function Router() {
       <Route path={"/lessons"} component={LessonsPage} />
       <Route path={"/student-platform"} component={StudentPlatformPage} />
       <Route path={"/library"} component={LibraryPage} />
-      <Route path={"/faq"} component={FAQPage} />
+      <Route path={"/faq"} component={FAQ} />
       <Route path={"/terms"} component={TermsPage} />
       <Route path={"/contact"} component={ContactPage} />
       <Route path={"/ja"} component={JapaneseCanvas} />

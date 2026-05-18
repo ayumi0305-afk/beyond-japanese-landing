@@ -1,0 +1,186 @@
+/* FAQ page — fully scoped to .faq-page to prevent global bleed */
+
+.faq-page {
+  /* CSS variable bridge: design tokens not present in production index.css */
+  --beige: #F5EFE0;
+  --beige-deep: #ece4cf;
+  --ink-soft: #383c3c;
+  --brown: #583822;
+  --blue: #0D7A99;
+  --white: #ffffff;
+  --shadow-soft: 0 1px 2px rgba(31, 42, 46, 0.03), 0 12px 40px rgba(31, 42, 46, 0.05);
+  background: var(--cream);
+}
+
+/* eyebrow label */
+.faq-page .eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* FAQ accordion item styles (ported from design global styles) */
+.faq-page .faq-item {
+  background: var(--beige);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+.faq-page .faq-item.open { background: var(--beige-deep); }
+.faq-page .faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 26px 32px;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  letter-spacing: -0.01em;
+}
+.faq-page .faq-q svg { transition: transform 0.25s; flex-shrink: 0; }
+.faq-page .faq-item.open .faq-q svg { transform: rotate(180deg); }
+.faq-page .faq-a {
+  padding: 0 32px 26px;
+  font-size: 16px;
+  color: var(--brown);
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+/* Hero */
+.faq-page .faq-hero {
+  padding: 140px 0 80px;
+  background: var(--cream);
+  text-align: center;
+}
+.faq-page .faq-hero .eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.faq-page .faq-hero h1 {
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: #1B829E;
+  margin-bottom: 24px;
+}
+.faq-page .faq-hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin: 0 auto;
+  text-wrap: pretty;
+}
+
+/* Body */
+.faq-page .faq-body {
+  background: var(--cream);
+  padding: 64px 0 120px;
+}
+
+/* Category sections */
+.faq-page .faq-section + .faq-section { margin-top: 72px; }
+
+.faq-page .faq-section-head {
+  max-width: 880px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 0 32px;
+}
+.faq-page .faq-section-head .index {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--red);
+  letter-spacing: 0.12em;
+}
+.faq-page .faq-section-head h2 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #593922;
+  margin: 0;
+}
+
+.faq-page .faq-section-list {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* CTA panel */
+.faq-page .faq-cta {
+  background: var(--cream);
+  padding: 0 32px 120px;
+}
+.faq-page .faq-cta-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #1f5266;
+  border-radius: 28px;
+  padding: clamp(64px, 8vw, 96px) clamp(32px, 6vw, 88px);
+  text-align: center;
+  color: var(--white);
+}
+.faq-page .faq-cta-inner h2 {
+  font-size: clamp(32px, 3.6vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+.faq-page .faq-cta-inner p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+/* Override production .main-button for dark CTA panel */
+.faq-page .faq-cta-inner .main-button {
+  background: var(--white);
+  color: #1f5266;
+  padding: 20px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  min-width: 0;
+}
+.faq-page .faq-cta-inner .main-button:hover {
+  background: var(--beige);
+  color: #1f5266;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-page .faq-hero { padding: 96px 0 56px; }
+  .faq-page .faq-hero h1 { margin-bottom: 16px; }
+  .faq-page .faq-body { padding: 48px 0 88px; }
+  .faq-page .faq-section + .faq-section { margin-top: 56px; }
+  .faq-page .faq-section-head { padding: 0 20px; }
+  .faq-page .faq-section-list { padding: 0 20px; gap: 10px; }
+  .faq-page .faq-q { padding: 20px 24px; font-size: 15px; }
+  .faq-page .faq-a { padding: 0 24px 20px; font-size: 15px; }
+  .faq-page .faq-cta { padding: 0 20px 88px; }
+  .faq-page .faq-cta-inner { padding: 48px 28px; }
+}
